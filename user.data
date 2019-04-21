@@ -1,0 +1,57 @@
+[
+    {
+    "quest_description": "Sign up for the CQ Mobile App!",
+    "quest_hint": "N/A",
+    "quest_drive": 10,
+    "quest_knowledge": 0,
+    "quest_strategy": 0,
+    "quest_action": 0,
+    "quest_max_repeat": 1,
+
+    "user_repeat_time": 1,
+    "user_reflection": "This is some reflection for the CQ App sign-up quest",
+    "user_is_complete": True,
+    },
+
+    {
+    "quest_description": "Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
+    "quest_hint": "If you love sports, how can you learn more a bout a new culture through sports?",
+    "quest_drive": 2,
+    "quest_knowledge": 0,
+    "quest_strategy": 0,
+    "quest_action": 0,
+    "quest_max_repeat": False,
+
+    "user_repeat_time": 1,
+    "user_reflection": "This is my reflection for the 1st time connection quest.",
+    "user_is_complete": True,
+    },
+
+    {
+    "quest_description": "Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
+    "quest_hint": "If you love sports, how can you learn more a bout a new culture through sports?",
+    "quest_drive": 2,
+    "quest_knowledge": 0,
+    "quest_strategy": 0,
+    "quest_action": 0,
+    "quest_max_repeat": False,
+
+    "user_repeat_time": 2,
+    "user_reflection": "This is my reflection for the 2nd time connection quest.",
+    "user_is_complete": True,
+    },
+
+    {
+    "quest_description": "Study a foreign language while studying in a culture that speaks that language.",
+    "quest_hint": "N/A",
+    "quest_drive": 0,
+    "quest_knowledge": 300,
+    "quest_strategy": 0,
+    "quest_action": 0,
+    "quest_max_repeat": 2,
+
+    "user_repeat_time": 1,
+    "user_reflection": "Ongoing language learning reflection",
+    "user_is_complete": False,
+    }
+]
