@@ -11,6 +11,7 @@
     "user_repeat_time": 1,
     "user_reflection": "This is some reflection for the CQ App sign-up quest",
     "user_is_complete": True,
+    "user_complete_date": 2019-04-21
     },
 
     {
@@ -25,6 +26,7 @@
     "user_repeat_time": 1,
     "user_reflection": "This is my reflection for the 1st time connection quest.",
     "user_is_complete": True,
+    "user_complete_date": 2019-04-21
     },
 
     {
@@ -39,6 +41,7 @@
     "user_repeat_time": 2,
     "user_reflection": "This is my reflection for the 2nd time connection quest.",
     "user_is_complete": True,
+    "user_complete_date": 2019-04-21
     },
 
     {
@@ -53,5 +56,6 @@
     "user_repeat_time": 1,
     "user_reflection": "Ongoing language learning reflection",
     "user_is_complete": False,
+    "user_complete_date": False,
     }
 ]
