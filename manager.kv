@@ -1,0 +1,340 @@
+ScreenManager:
+    id: screen_manager
+
+    Profile:
+        id: input_screen
+        name: 'input_screen'
+        manager: 'screen_manager'
+
+
+    Quests:
+        id: quests_screen
+        name: 'log_screen'
+        manager: 'screen_manager'
+
+    Completion:
+        id: completion_screen
+        name: 'details_screen'
+        manager: 'screen_manager'
+
+
+<Profile>:
+    on_enter:
+        root.information_func()
+    GridLayout:
+        id: entire_layout
+        rows: 3
+
+
+        GridLayout:
+            id: top_bar
+            size_hint_y: 2
+            cols: 3
+
+            Spinner:
+                id: menu
+                text: 'Menu'
+                values: 'Import', 'Export', 'MetaData'
+                size_hint_x: .2
+                option_cls:
+
+            Label:
+                id: user_data
+                text: 'User: \nDate:\n'
+                size_hint_x: .8
+
+            CircularProgressBar:
+                id: progress
+                size_hint_x: .2
+                pos: 100, 100
+
+        GridLayout:
+            id: trackers
+            size_hint_y: 18
+            cols: 3
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 1
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: cat_1
+                    size_hint_y: .8
+                    text: 'Category 1'
+                    on_release:
+
+                ProgressBar:
+                    id: prog_cat_1
+                    size_hint_y: .2
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 2
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: cat_2
+                    size_hint_y: .8
+                    text: 'Category 2'
+                ProgressBar:
+                    id: prog_cat_2
+                    size_hint_y: .2
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 3
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: cat_3
+                    size_hint_y: .8
+                    text: 'Category 3'
+                ProgressBar:
+                    id: prog_cat_3
+                    size_hint_y: .2
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 4
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: cat_4
+                    size_hint_y: .8
+                    text: 'Category 4'
+                ProgressBar:
+                    id: prog_cat_4
+                    size_hint_y: .2
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+                    app.root.current = 'input_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+<Quests>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Quests Screen'
+            size_hint_y: 40
+        BoxLayout:
+            size_hint_y: 2
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'input_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+<Completion>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Completion Screen'
+            size_hint_y: 40
+        BoxLayout:
+            size_hint_y: 2
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'input_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.current = 'details_screen'
