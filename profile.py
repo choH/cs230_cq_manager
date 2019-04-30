@@ -21,7 +21,70 @@ from kivy.clock import Clock
 class Profile(Screen):
 
     def information_func(self):
-        pass
+
+        drive_p_total = 0
+        drive_p = 0
+
+        knowledge_p_total = 0
+        knowledge_p = 0
+
+        strategy_p_total = 0
+        strategy_p = 0
+
+        action_p_total = 0
+        action_p = 0
+
+
+        with open("quest.data", "r") as quest_file:
+            quest_data = json.load(quest_file)
+
+            for quest in quest_data:
+                drive_p_total += int(quest["quest_drive"])
+                knowledge_p_total += int(quest["quest_knowledge"])
+                strategy_p_total += int(quest["quest_strategy"])
+                action_p_total += int(quest["quest_action"])
+
+        with open("user.data", "r") as user_file:
+            user_data = json.load(user_file)
+
+            for quest in user_data:
+                if quest["user_is_complete"] == "True":
+                    drive_p += int(quest["quest_drive"])
+                    knowledge_p += int(quest["quest_knowledge"])
+                    strategy_p += int(quest["quest_strategy"])
+                    action_p += int(quest["quest_action"])
+
+
+        self.ids.prog_drive.max = drive_p_total
+        self.ids.prog_drive.value = drive_p
+
+        self.ids.drive.text = 'Drive\n' + str(drive_p) + '/' + str(drive_p_total)
+
+        self.ids.prog_knowledge.max = knowledge_p_total
+        self.ids.prog_knowledge.value = knowledge_p
+
+        self.ids.knowledge.text = 'Knowledge\n' + str(knowledge_p) + '/' + str(
+            knowledge_p_total)
+
+        self.ids.prog_strategy.max = strategy_p_total
+        self.ids.prog_strategy.value = strategy_p
+
+        self.ids.strategy.text = 'Strategy\n' + str(strategy_p) + '/' + str(
+            strategy_p_total)
+
+        self.ids.prog_action.max = action_p_total
+        self.ids.prog_action.value = action_p
+
+        self.ids.action.text = 'Action\n' + str(action_p) + '/' + str(
+            action_p_total)
+
+        quest_file.close()
+        user_file.close()
+
+            #data.append(information)
+        #with open(filename, "w") as json_file:
+            #json.dump(data, json_file)
+            #json_file.close()
 
 
     def spinner_func(self):
@@ -112,5 +175,5 @@ class ProfileApp(App):
         return Profile()
 
 if __name__ == '__main__':
-    #ProfileApp().run()
-    managerApp().run()
+    ProfileApp().run()
+    #managerApp().run()

@@ -1,3 +1,4 @@
+
 ScreenManager:
     id: screen_manager
 
@@ -19,8 +20,6 @@ ScreenManager:
 
 
 <Profile>:
-    on_enter:
-        root.information_func()
     GridLayout:
         id: entire_layout
         rows: 3
@@ -43,11 +42,11 @@ ScreenManager:
                 text: 'User: \nDate:\n'
                 size_hint_x: .8
 
-            CircularProgressBar:
+            Button:
                 id: progress
+                text: 'Level\n0%\nProgress'
+                halign: 'center'
                 size_hint_x: .2
-                pos: 100, 100
-
         GridLayout:
             id: trackers
             size_hint_y: 18
@@ -81,14 +80,20 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_1
+                    id: drive
                     size_hint_y: .8
-                    text: 'Category 1'
+                    text: 'Drive\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
                     on_release:
-
+                        app.root.transition.direction = 'left'
+                        root.switch('Drive')
+                        app.root.current = 'log_screen'
                 ProgressBar:
-                    id: prog_cat_1
+                    id: prog_drive
                     size_hint_y: .2
+                    max: 100
+                    value: 0
 
             Button:
                 id: dum_1_3
@@ -128,12 +133,19 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_2
+                    id: knowledge
                     size_hint_y: .8
-                    text: 'Category 2'
+                    text: 'Knowledge\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Knowledge')
+                        app.root.current = 'log_screen'
                 ProgressBar:
-                    id: prog_cat_2
+                    id: prog_knowledge
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
@@ -174,12 +186,19 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_3
+                    id: strategy
                     size_hint_y: .8
-                    text: 'Category 3'
+                    text: 'Strategy\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Strategy')
+                        app.root.current = 'log_screen'
                 ProgressBar:
-                    id: prog_cat_3
+                    id: prog_strategy
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
@@ -216,12 +235,19 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_4
+                    id: action
                     size_hint_y: .8
-                    text: 'Category 4'
+                    text: 'Action\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Action')
+                        app.root.current = 'log_screen'
                 ProgressBar:
-                    id: prog_cat_4
+                    id: prog_action
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
@@ -255,7 +281,7 @@ ScreenManager:
                 id: bottom_to_input
                 text: 'Profile'
                 on_release:
-                    app.root.current = 'input_screen'
+
 
             Button:
                 size_hint_x: 1
@@ -276,9 +302,12 @@ ScreenManager:
 
 
 <Quests>:
+    on_enter:
+        root.check_function()
     BoxLayout:
         orientation: 'vertical'
         Label:
+            id: quests_button
             text: 'Quests Screen'
             size_hint_y: 40
         BoxLayout:
@@ -312,6 +341,7 @@ ScreenManager:
     BoxLayout:
         orientation: 'vertical'
         Label:
+            id: completion_button
             text: 'Completion Screen'
             size_hint_y: 40
         BoxLayout:
