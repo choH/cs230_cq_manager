@@ -1,26 +1,4 @@
-ScreenManager:
-    id: screen_manager
-
-    Profile:
-        id: input_screen
-        name: 'input_screen'
-        manager: 'screen_manager'
-
-
-    Quests:
-        id: quests_screen
-        name: 'log_screen'
-        manager: 'screen_manager'
-
-    Completion:
-        id: completion_screen
-        name: 'details_screen'
-        manager: 'screen_manager'
-
-
 <Profile>:
-    on_enter:
-        app.root.information_func()
     GridLayout:
         id: entire_layout
         rows: 3
@@ -43,9 +21,11 @@ ScreenManager:
                 text: 'User: \nDate:\n'
                 size_hint_x: .8
 
-            CircularProgressBar:
+            Button:
                 id: progress
                 size_hint_x: .2
+                on_release:
+                    root.information_func()
 
         GridLayout:
             id: trackers
@@ -80,12 +60,14 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_1
+                    id: drive
                     size_hint_y: .8
-                    text: 'Category 1'
+                    text: 'Drive'
                 ProgressBar:
-                    id: prog_cat_1
+                    id: prog_drive
                     size_hint_y: .2
+                    max: 100
+                    value: 0
 
             Button:
                 id: dum_1_3
@@ -125,12 +107,13 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_2
+                    id: knowledge
                     size_hint_y: .8
-                    text: 'Category 2'
+                    text: 'Knowledge'
                 ProgressBar:
-                    id: prog_cat_2
+                    id: prog_knowledge
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
@@ -171,12 +154,13 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_3
+                    id: strategy
                     size_hint_y: .8
-                    text: 'Category 3'
+                    text: 'Strategy'
                 ProgressBar:
-                    id: prog_cat_3
+                    id: prog_strategy
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
@@ -213,12 +197,13 @@ ScreenManager:
                 size_hint: .8, .1
 
                 Button:
-                    id: cat_4
+                    id: action
                     size_hint_y: .8
-                    text: 'Category 4'
+                    text: 'Action'
                 ProgressBar:
-                    id: prog_cat_4
+                    id: prog_action
                     size_hint_y: .2
+                    max: 100
 
             Button:
                 id: dum_1_3
