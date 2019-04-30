@@ -1,61 +1,62 @@
 [
     {
-    "quest_description": "Sign up for the CQ Mobile App!",
-    "quest_hint": "N/A",
-    "quest_drive": 10,
-    "quest_knowledge": 0,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": 1,
-
-    "user_repeat_time": 1,
-    "user_reflection": "This is some reflection for the CQ App sign-up quest",
-    "user_is_complete": True,
-    "user_complete_date": 2019-04-21
+        "quest_action":0,
+        "quest_drive":10,
+        "quest_knowledge":0,
+        "user_complete_date":false,
+        "quest_strategy":0,
+        "quest_description":"Sign up for the CQ Mobile App!",
+        "user_is_complete":false,
+        "quest_max_repeat":1,
+        "quest_id":"001",
+        "quest_hint":"N/A",
+        "user_quest_id":201943016540276125,
+        "user_reflection":"N/A",
+        "user_repeat_time":1
     },
-
     {
-    "quest_description": "Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
-    "quest_hint": "If you love sports, how can you learn more a bout a new culture through sports?",
-    "quest_drive": 2,
-    "quest_knowledge": 0,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": False,
-
-    "user_repeat_time": 1,
-    "user_reflection": "This is my reflection for the 1st time connection quest.",
-    "user_is_complete": True,
-    "user_complete_date": 2019-04-21
+        "quest_action":0,
+        "quest_drive":2,
+        "quest_knowledge":0,
+        "user_complete_date":false,
+        "quest_strategy":0,
+        "quest_description":"Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
+        "user_is_complete":false,
+        "quest_max_repeat":false,
+        "quest_id":"002",
+        "quest_hint":"If you love sports, how can you learn more a bout a new culture through sports?",
+        "user_repeat_time":1,
+        "user_reflection":"N/A",
+        "user_quest_id":201943016540276125
     },
-
     {
-    "quest_description": "Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
-    "quest_hint": "If you love sports, how can you learn more a bout a new culture through sports?",
-    "quest_drive": 2,
-    "quest_knowledge": 0,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": False,
-
-    "user_repeat_time": 2,
-    "user_reflection": "This is my reflection for the 2nd time connection quest.",
-    "user_is_complete": True,
-    "user_complete_date": 2019-04-21
+        "quest_action":0,
+        "quest_drive":2,
+        "quest_knowledge":0,
+        "user_complete_date":false,
+        "quest_strategy":0,
+        "quest_description":"Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
+        "user_is_complete":false,
+        "quest_max_repeat":false,
+        "quest_id":"002",
+        "quest_hint":"If you love sports, how can you learn more a bout a new culture through sports?",
+        "user_quest_id":201943016540276125,
+        "user_reflection":"N/A",
+        "user_repeat_time":2
     },
-
     {
-    "quest_description": "Study a foreign language while studying in a culture that speaks that language.",
-    "quest_hint": "N/A",
-    "quest_drive": 0,
-    "quest_knowledge": 300,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": 2,
-
-    "user_repeat_time": 1,
-    "user_reflection": "Ongoing language learning reflection",
-    "user_is_complete": False,
-    "user_complete_date": False,
+        "quest_knowledge":300,
+        "quest_action":0,
+        "quest_drive":0,
+        "quest_description":"Study a foreign language while studying in a culture that speaks that language.",
+        "user_complete_date":false,
+        "quest_strategy":0,
+        "quest_hint":"N/A",
+        "user_is_complete":false,
+        "quest_max_repeat":2,
+        "quest_id":"003",
+        "user_repeat_time":1,
+        "user_reflection":"N/A",
+        "user_quest_id":201943016540276125
     }
 ]
