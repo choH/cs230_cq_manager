@@ -87,6 +87,10 @@ class Profile(Screen):
         self.ids.action.text = 'Action\n' + str(action_p) + '/' + str(
             150)
 
+        percent = float(drive_p + action_p + strategy_p + knowledge_p)
+        percent = int((percent / 600.0) * 100.0)
+        #self.ids.user_data.text = 'User: \nDate: \n {}% Level Progress'.format(percent)
+        self.ids.progress_tr.text = '{}%\nLevel\nProgress'.format(percent)
         quest_file.close()
         user_file.close()
 
