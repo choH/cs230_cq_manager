@@ -1,31 +1,32 @@
-[
-    {
-    "quest_description": "Sign up for the CQ Mobile App!",
-    "quest_hint": "N/A",
-    "quest_drive": 10,
-    "quest_knowledge": 0,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": 1,
+[  
+    {  
+        "quest_id":"001",
+        "quest_description":"Sign up for the CQ Mobile App!",
+        "quest_hint":"N/A",
+        "quest_drive":10,
+        "quest_knowledge":0,
+        "quest_strategy":0,
+        "quest_action":0,
+        "quest_max_repeat":1
     },
-
-    {
-    "quest_description": "Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
-    "quest_hint": "If you love sports, how can you learn more a bout a new culture through sports?",
-    "quest_drive": 2,
-    "quest_knowledge": 0,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": False,
+    {  
+        "quest_id":"002",
+        "quest_description":"Start a list of 3 ways you can connect your existing interests with an intercultural interest.",
+        "quest_hint":"If you love sports, how can you learn more a bout a new culture through sports?",
+        "quest_drive":2,
+        "quest_knowledge":0,
+        "quest_strategy":0,
+        "quest_action":0,
+        "quest_max_repeat":false
     },
-
-    {
-    "quest_description": "Study a foreign language while studying in a culture that speaks that language.",
-    "quest_hint": "N/A",
-    "quest_drive": 0,
-    "quest_knowledge": 300,
-    "quest_strategy": 0,
-    "quest_action": 0,
-    "quest_max_repeat": 2,
+    {  
+        "quest_id":"003",
+        "quest_description":"Study a foreign language while studying in a culture that speaks that language.",
+        "quest_hint":"N/A",
+        "quest_drive":0,
+        "quest_knowledge":300,
+        "quest_strategy":0,
+        "quest_action":0,
+        "quest_max_repeat":2
     }
 ]
