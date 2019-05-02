@@ -38,10 +38,13 @@ class DetailsScreen(Screen):
         dismiss_button.bind(on_press=popup.dismiss)
         popup.open()
 
-    def entry(self):
+    def on_enter(self):
+        self.entry(2)
+
+    def entry(self, quest_id):
         quest_holder = False
         for quest in get_next_user_quest():
-            if quest["user_quest_id"] == 2:
+            if quest["user_quest_id"] == quest_id:
                 quest_holder = quest
                 break
         self.ids.description.text = 'Quest Description: \n' + '    ' + str(quest_holder["quest_description"])
