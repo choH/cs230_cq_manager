@@ -42,11 +42,14 @@ ScreenManager:
                 text: 'User: \nDate:\n'
                 size_hint_x: .8
 
+
             Button:
-                id: progress
-                text: 'Level\n0%\nProgress'
+                id: progress_tr
+                text: '0%\nLevel\nProgress'
                 halign: 'center'
                 size_hint_x: .2
+                on_parent:
+                    root.information_func()
         GridLayout:
             id: trackers
             size_hint_y: 18
@@ -89,11 +92,13 @@ ScreenManager:
                         app.root.transition.direction = 'left'
                         root.switch('Drive')
                         app.root.current = 'log_screen'
+                    background_color: [0, 0, 1 , 1]
                 ProgressBar:
                     id: prog_drive
                     size_hint_y: .2
                     max: 100
                     value: 0
+
 
             Button:
                 id: dum_1_3
@@ -137,6 +142,7 @@ ScreenManager:
                     size_hint_y: .8
                     text: 'Knowledge\n0/150'
                     halign: 'center'
+                    background_color: [.95, .75, 0, 1]
                     on_parent: root.information_func()
                     on_release:
                         app.root.transition.direction = 'left'
@@ -190,6 +196,7 @@ ScreenManager:
                     size_hint_y: .8
                     text: 'Strategy\n0/150'
                     halign: 'center'
+                    background_color: [1, 0, 0 , 1]
                     on_parent: root.information_func()
                     on_release:
                         app.root.transition.direction = 'left'
@@ -239,6 +246,7 @@ ScreenManager:
                     size_hint_y: .8
                     text: 'Action\n0/150'
                     halign: 'center'
+                    background_color: [1, 0, 1, 1]
                     on_parent: root.information_func()
                     on_release:
                         app.root.transition.direction = 'left'
