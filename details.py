@@ -27,6 +27,7 @@ class DetailsScreen(Screen):
         :param: None
         :return: None
         """
+        
         content = BoxLayout(orientation='vertical')
         error_label = Label(text="Please fill all required fields")
         dismiss_button = Button(text='Ok')
