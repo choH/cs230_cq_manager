@@ -1,0 +1,50 @@
+ScreenManager:
+    id: screen_manager
+    DetailsScreen:
+        id: details_screen
+        name: 'details_screen'
+        manager: 'screen_manager'
+
+<DetailsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            Label:
+                id: description
+                text: 'Quest Description: '
+                text_size: self.width, None
+                height: self.texture_size[1]
+        ScrollView:
+            Label:
+                id: hint
+                text: 'Hint: '
+                text_size: self.width, None
+                height: self.texture_size[1]
+        GridLayout:
+            rows: 1
+            Label:
+                id: drive
+                text: 'Drive: '
+            Label:
+                id: knowledge
+                text: 'Knowledge: '
+            Label:
+                id: strategy
+                text: 'Strategy: '
+            Label:
+                id: action
+                text: 'Action: '
+        GridLayout:
+            rows: 1
+            ScrollView:
+                size_hint_x: 4
+                size_hint_y: 2
+                TextInput:
+                    id: response
+                    hint_text: 'Type your response'
+            Button:
+                id: submit
+                text: 'Submit'
+                on_release: root.processSubmit()
+
+
