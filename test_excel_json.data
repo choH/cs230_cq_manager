@@ -1,0 +1,200 @@
+[
+    {
+        "quest_description": "Sign up for the CQ Mobile App!",
+        "quest_is_repeatable": "No",
+        "quest_drive": 10.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": 0,
+        "quest_hint": "N/A",
+        "quest_id": "001"
+    },
+    {
+        "quest_description": "Start a list of 3 ways you can gain more enjoyment from your intercultural interactions.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "002"
+    },
+    {
+        "quest_description": "Start a list of 3 ways you can connext your existing interests with an intercultural interest. ",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "If you love sports, how can you learn morea bout a new culture through sports?",
+        "quest_id": "003"
+    },
+    {
+        "quest_description": "Brainstorm new insights you can by increased exposure to different cultures.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "What opportunities might I gain if I expanded my cross-cultural network?",
+        "quest_id": "004"
+    },
+    {
+        "quest_description": "Think of one way your intercultural experience can benefit someone else.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "005"
+    },
+    {
+        "quest_description": "Create a way to share your access to an intercultural network with someone else.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 5.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "Invite a friend tojoin you for dinner with someone in your CQ Network.",
+        "quest_id": "006"
+    },
+    {
+        "quest_description": "Share with a friend the benefits you think they could gain from learning about cultural differences.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 3.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "007"
+    },
+    {
+        "quest_description": "Research a new cultural group and the impact of friending them. ",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 3.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "008"
+    },
+    {
+        "quest_description": "Invite someone from a different cultural background than you to share a meal.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 1.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "009"
+    },
+    {
+        "quest_description": "Have a meal with someone who has a very different background than you. ",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "010"
+    },
+    {
+        "quest_description": "Compare notes with someone on cultural similarities and differences.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 3.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "011"
+    },
+    {
+        "quest_description": "Recall a time when you felt out of your element, but ended up succeeding. Write down what led to your success and compare it to interacting effectively with someone from a different culture.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 2.0,
+        "quest_knowledge": 0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "012"
+    },
+    {
+        "quest_description": "Read a country profile on the BBC News website before traveling to that country.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 3.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "013"
+    },
+    {
+        "quest_description": "Read a country profile on the BBC News website before meeting with someone from that country.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 3.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "014"
+    },
+    {
+        "quest_description": "Refer to a travel  guidebook to learn more about a country.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 2.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "015"
+    },
+    {
+        "quest_description": "Read an article about a current event in a foreign country.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 2.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "016"
+    },
+    {
+        "quest_description": "Talk with someone from a different country about a current event happening in their country.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 3.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "N/A",
+        "quest_id": "017"
+    },
+    {
+        "quest_description": "Pick a value and read about different culture's attitudes surrounding that value.",
+        "quest_is_repeatable": "Yes",
+        "quest_drive": 0,
+        "quest_knowledge": 2.0,
+        "quest_strategy": 0,
+        "quest_action": 0,
+        "quest_max_repeat": false,
+        "quest_hint": "Explore how different cultures think about \"time\", being on time, etc.",
+        "quest_id": "018"
+    }
+]

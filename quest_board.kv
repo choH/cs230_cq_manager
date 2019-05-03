@@ -1,0 +1,589 @@
+ScreenManager:
+    id: screen_manager
+
+    ProfileScreen:
+        id: profile_screen
+        name: 'profile_screen'
+        manager: 'screen_manager'
+
+
+    QuestScreen:
+        id: quest_screen
+        name: 'quest_screen'
+        manager: 'screen_manager'
+
+    DetailsScreen:
+        id: details_screen
+        name: 'details_screen'
+        manager: 'screen_manager'
+
+
+
+<ProfileScreen>
+    on_enter:
+        root.information_func()
+    BoxLayout:
+        orientation: 'vertical'
+
+    GridLayout:
+        id: entire_layout
+        rows: 3
+
+        GridLayout:
+            id: top_bar
+            size_hint_y: 2
+            cols: 4
+
+            Button:
+                id: file_import
+                text: 'Import'
+                size_hint_x: .2
+                on_release:
+                    root.file_import()
+
+            Button:
+                id: file_export
+                text: 'Export'
+                size_hint_x: .2
+                on_release:
+                    root.file_export()
+
+            Label:
+                id: user_data
+                text: 'User: \nDate:\n'
+                size_hint_x: .8
+
+
+            Button:
+                id: progress_tr
+                text: '0%\nLevel\nProgress'
+                halign: 'center'
+                size_hint_x: .4
+                on_parent:
+                    root.information_func()
+
+        GridLayout:
+            id: trackers
+            size_hint_y: 18
+            cols: 3
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 1
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: drive
+                    size_hint_y: .8
+                    text: 'Drive\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Drive')
+                        # app.root.get_screen('quest_screen').on_enter(1)
+                        app.root.current = 'quest_screen'
+                    background_color: [0, 0, 1 , 1]
+                ProgressBar:
+                    id: prog_drive
+                    size_hint_y: .2
+                    max: 100
+                    value: 0
+
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 2
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: knowledge
+                    size_hint_y: .8
+                    text: 'Knowledge\n0/150'
+                    halign: 'center'
+                    background_color: [.95, .75, 0, 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Knowledge')
+                        app.root.current = 'quest_screen'
+                ProgressBar:
+                    id: prog_knowledge
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 3
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: strategy
+                    size_hint_y: .8
+                    text: 'Strategy\n0/150'
+                    halign: 'center'
+                    background_color: [1, 0, 0 , 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Strategy')
+                        app.root.current = 'quest_screen'
+                ProgressBar:
+                    id: prog_strategy
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 4
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: action
+                    size_hint_y: .8
+                    text: 'Action\n0/150'
+                    halign: 'center'
+                    background_color: [1, 0, 1, 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Action')
+                        app.root.current = 'quest_screen'
+                ProgressBar:
+                    id: prog_action
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_profile
+                text: 'Profile'
+                on_release:
+                    app.root.current = 'profile_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_quest
+                text: 'Quest'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'quest_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Details'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<QuestScreen>
+    id: current_quest_screen
+    name: 'current_quest_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size_hint
+        pos: root.pos
+
+        GridLayout:
+            size_hint_y: 2
+            cols: 5
+            rows: 1
+
+            ToggleButton:
+                id: filter_drive
+                text: 'Drive'
+                on_release: root.set_drive()
+
+            ToggleButton:
+                id: filter_knowledge
+                text: 'Knowledge'
+                on_release: root.set_knowledge()
+
+            ToggleButton:
+                id: filter_strategy
+                text: 'Strategy'
+                on_release: root.set_strategy()
+
+            ToggleButton:
+                id: filter_action
+                text: 'Action'
+                on_release: root.set_action()
+
+            ToggleButton:
+                id: filter_registered
+                text: 'Registered'
+                on_release: root.set_registered()
+
+        Label:
+            id: entry_title_label
+            text: 'Click to Register the Quest Accordingly'
+
+        ScrollView:
+            size_hint_y: 20
+            id: entry_scroll
+
+            GridLayout:
+                id: entry_layout
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 150
+                cols:1
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_profile
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'profile_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_quest
+                text: 'Quest'
+                on_release: app.root.current = 'quest_screen'
+
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Details'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<DetailsScreen>
+    reflection_input: input_reflection
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.size_hint
+        pos: root.pos
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.5
+
+            Label:
+                id: label_quest_id
+                text: 'Quest ID: '
+                size_hint_x: 9
+
+            Label:
+                id: label_unique_id
+                text: ''
+                size_hint_x: 1
+
+
+
+        GridLayout
+            size_hint_y: 2
+            cols: 4
+            rows: 2
+
+            Label:
+                id: label_drive
+                text: 'Drive: '
+
+            Label:
+                id: label_knowledge
+                text: 'Knowledge: '
+
+            Label:
+                id: label_action
+                text: 'Action: '
+
+            Label:
+                id: label_strategy
+                text: 'Strategy: '
+
+            Label:
+                id: label_repeatable
+                text: 'Repeatable: '
+
+            Label:
+                id: label_max_repeat
+                text: 'Max Repeat: '
+
+            Label:
+                id: label_repeat_time
+                text: 'Repeat Time: '
+
+
+            Label:
+                id: label_completion
+                text: 'Completion: '
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 4
+
+            Label:
+                id: label_description
+                text: 'Quest Description: '
+                text_size: self.width, None
+                height: self.texture_size[1]
+                halign: 'center'
+                valign: 'middle'
+
+            Label:
+                id: label_hint
+                text: 'Quest Hint: '
+                text_size: self.width, None
+                height: self.texture_size[1]
+                halign: 'center'
+                valign: 'middle'
+
+            Label:
+                id: label_reflection
+                text: 'Reflection: '
+                text_size: self.width, None
+                height: self.texture_size[1]
+                halign: 'center'
+                valign: 'middle'
+
+
+
+
+        TextInput:
+            id: input_reflection
+            size_hint_y: 5
+            hint_text: 'Type your reflection in here'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.5
+
+            Button:
+                id: delete_quest
+                text: 'Delete Quest'
+                on_release: root.delete_quest()
+
+            Button:
+                id: submit_reflection
+                text: 'Submit Reflection'
+                on_release: root.submit_reflection()
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.5
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_profile
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'profile_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_quest
+                text: 'Quest'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'quest_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Details'
+                on_release:
+                    app.root.current = 'details_screen'

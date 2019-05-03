@@ -1,0 +1,380 @@
+
+ScreenManager:
+    id: screen_manager
+
+    Profile:
+        id: input_screen
+        name: 'input_screen'
+        manager: 'screen_manager'
+
+
+    Quests:
+        id: quests_screen
+        name: 'log_screen'
+        manager: 'screen_manager'
+
+    Completion:
+        id: completion_screen
+        name: 'details_screen'
+        manager: 'screen_manager'
+
+
+<Profile>:
+    GridLayout:
+        id: entire_layout
+        rows: 3
+
+
+        GridLayout:
+            id: top_bar
+            size_hint_y: 2
+            cols: 3
+
+            Spinner:
+                id: menu
+                text: 'Menu'
+                values: 'Import', 'Export', 'MetaData'
+                size_hint_x: .2
+                option_cls:
+
+            Label:
+                id: user_data
+                text: 'User: \nDate:\n'
+                size_hint_x: .8
+
+
+            Button:
+                id: progress_tr
+                text: '0%\nLevel\nProgress'
+                halign: 'center'
+                size_hint_x: .2
+                on_parent:
+                    root.information_func()
+                on_enter:
+                    root.information_func()
+        GridLayout:
+            id: trackers
+            size_hint_y: 18
+            cols: 3
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 1
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: drive
+                    size_hint_y: .8
+                    text: 'Drive\n0/150'
+                    halign: 'center'
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Drive')
+                        app.root.current = 'log_screen'
+                    background_color: [0, 0, 1 , 1]
+                ProgressBar:
+                    id: prog_drive
+                    size_hint_y: .2
+                    max: 100
+                    value: 0
+
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 2
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: knowledge
+                    size_hint_y: .8
+                    text: 'Knowledge\n0/150'
+                    halign: 'center'
+                    background_color: [.95, .75, 0, 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Knowledge')
+                        app.root.current = 'log_screen'
+                ProgressBar:
+                    id: prog_knowledge
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 3
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: strategy
+                    size_hint_y: .8
+                    text: 'Strategy\n0/150'
+                    halign: 'center'
+                    background_color: [1, 0, 0 , 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Strategy')
+                        app.root.current = 'log_screen'
+                ProgressBar:
+                    id: prog_strategy
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 4
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: action
+                    size_hint_y: .8
+                    text: 'Action\n0/150'
+                    halign: 'center'
+                    background_color: [1, 0, 1, 1]
+                    on_parent: root.information_func()
+                    on_release:
+                        app.root.transition.direction = 'left'
+                        root.switch('Action')
+                        app.root.current = 'log_screen'
+                ProgressBar:
+                    id: prog_action
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+<Quests>:
+    on_enter:
+        root.check_function()
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: quests_button
+            text: 'Quests Screen'
+            size_hint_y: 40
+        BoxLayout:
+            size_hint_y: 2
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'input_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+<Completion>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: completion_button
+            text: 'Completion Screen'
+            size_hint_y: 40
+        BoxLayout:
+            size_hint_y: 2
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'input_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.current = 'details_screen'
