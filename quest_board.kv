@@ -17,6 +17,64 @@ ScreenManager:
         name: 'details_screen'
         manager: 'screen_manager'
 
+    ImportScreen:
+        id: import_screen
+        name: 'import_screen'
+        manager: 'screen_manager'
+
+
+
+<ImportScreen>
+    BoxLayout:
+        orientation: 'vertical'
+
+        FileChooserIconView:
+            size_hint_y: 20
+            id: filechooser
+
+        Button:
+            text: 'Import this Spreadsheet'
+            size_hint_y: 1
+            on_release:
+                root.select_file(filechooser.selection)
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_profile
+                text: 'Profile'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'profile_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_quest
+                text: 'Quest'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'quest_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Details'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+
+
+
+
+
+
 
 
 <ProfileScreen>
@@ -39,7 +97,8 @@ ScreenManager:
                 text: 'Import'
                 size_hint_x: .2
                 on_release:
-                    root.file_import()
+                    app.root.transition.direction = 'right'
+                    app.root.current = 'import_screen'
 
             Button:
                 id: file_export
@@ -451,10 +510,13 @@ ScreenManager:
 
 <DetailsScreen>
     reflection_input: input_reflection
+    
     BoxLayout:
+        id: details_layout
         orientation: 'vertical'
         size: root.size_hint
         pos: root.pos
+
 
         BoxLayout:
             orientation: 'horizontal'

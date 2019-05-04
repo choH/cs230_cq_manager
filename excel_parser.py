@@ -42,8 +42,13 @@ def df_to_list(df):
     return quest_list
 
 
-def clean_quest_list(quest_list):
-    quest_id_counter = 1
+def clean_quest_list(quest_list, quest_id_initial=1):
+    quest_id_counter = quest_id_initial
+
+
+
+    print('quest_id_counter starts at {}'.format(quest_id_counter))
+
     for a_quest in quest_list:
         for k, v in a_quest.items():
             if k == 'quest_hint' and v == 'nan':
