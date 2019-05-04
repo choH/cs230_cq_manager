@@ -2,17 +2,17 @@
     {
         "quest_action": 0, 
         "quest_drive": 10.0, 
-        "quest_is_repeatable": "No", 
+        "quest_id": "001", 
         "quest_description": "Sign up for the CQ Mobile App!", 
-        "user_complete_date": "2019-05-03 21:23:15.924227", 
+        "user_complete_date": "2019-05-03 21:35:55.044640", 
         "quest_strategy": 0, 
         "quest_knowledge": 0, 
         "user_is_complete": true, 
         "quest_max_repeat": 0, 
-        "quest_id": "001", 
+        "quest_is_repeatable": "No", 
         "quest_hint": "N/A", 
-        "user_repeat_time": 1, 
+        "user_quest_id": 1, 
         "user_reflection": "", 
-        "user_quest_id": 2
+        "user_repeat_time": 1
     }
 ]
