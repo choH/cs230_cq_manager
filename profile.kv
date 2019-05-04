@@ -1,0 +1,267 @@
+<Profile>:
+    GridLayout:
+        id: entire_layout
+        rows: 3
+
+
+        GridLayout:
+            id: top_bar
+            size_hint_y: 2
+            cols: 3
+
+            Spinner:
+                id: menu
+                text: 'Menu'
+                values: 'Import', 'Export', 'MetaData'
+                size_hint_x: .2
+                option_cls:
+
+            Label:
+                id: user_data
+                text: 'User: \nDate:\n'
+                size_hint_x: .8
+
+            Button:
+                id: progress
+                size_hint_x: .2
+                on_release:
+                    root.information_func()
+
+        GridLayout:
+            id: trackers
+            size_hint_y: 18
+            cols: 3
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 1
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: drive
+                    size_hint_y: .8
+                    text: 'Drive'
+                ProgressBar:
+                    id: prog_drive
+                    size_hint_y: .2
+                    max: 100
+                    value: 0
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 2
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: knowledge
+                    size_hint_y: .8
+                    text: 'Knowledge'
+                ProgressBar:
+                    id: prog_knowledge
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 3
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: strategy
+                    size_hint_y: .8
+                    text: 'Strategy'
+                ProgressBar:
+                    id: prog_strategy
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            BoxLayout:
+                id: 4
+                orientation: 'vertical'
+                size_hint: .8, .1
+
+                Button:
+                    id: action
+                    size_hint_y: .8
+                    text: 'Action'
+                ProgressBar:
+                    id: prog_action
+                    size_hint_y: .2
+                    max: 100
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .1
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_1
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: 1
+                size_hint: .8, .05
+                background_color: [0, 0, 0, 0]
+
+            Button:
+                id: dum_1_3
+                size_hint: .1, .05
+                background_color: [0, 0, 0, 0]
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 1
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_input
+                text: 'Profile'
+                on_release:
+
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_log
+                text: 'Quests'
+                on_release:
+                    root.screen_manager.transition.direction = 'left'
+                    screen_manager.current = 'log_screen'
+
+            Button:
+                size_hint_x: 1
+                id: bottom_to_details
+                text: 'Completion'
+                on_release:
+                    app.root.transition.direction = 'left'
+                    app.root.current = 'details_screen'
+
+
+
+<Quests>:
+    Label:
+        text: 'Quests Screen'
+
+
+<Completion>:
+    Label:
+        text: 'Completion Screen'
