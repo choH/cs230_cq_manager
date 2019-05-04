@@ -433,6 +433,7 @@ class QuestScreen(Screen):
             if int(entry['quest_id']) == quest_id:
 
                 # Check if the quest (the user is tring to register) reach maxinum allow repetition time.
+                under_repeat_flag = True
                 if entry['quest_max_repeat'] is not False:
                     if entry['quest_max_repeat'] == 0:
                         max_allowed_repetition = entry['quest_max_repeat'] + 1
@@ -448,10 +449,10 @@ class QuestScreen(Screen):
                         if int(user_entry['quest_id']) == quest_id:
                             repeat_counter += 1
 
-                    under_repeat_flag = True
+
                     if repeat_counter >= max_allowed_repetition:
                         under_repeat_flag = False
-                        a_popup = PopUpBoard('Maxnium repition reached. \n' + 'Allow: ' + str(max_allowed_repetition) + '    Current: ' + str(repeat_counter))
+                        a_popup = PopUpBoard('Maxnium repetition reached. \n' + 'Allow: ' + str(max_allowed_repetition) + '    Current: ' + str(repeat_counter))
                         a_popup.show_popup()
 
 
@@ -714,7 +715,7 @@ class PopUpBoard():
         dismiss_button = Button(text='OK')
         content.add_widget(message_label)
         content.add_widget(dismiss_button)
-        popup = Popup(title='Error', content=content, size_hint=(0.5, 0.3))
+        popup = Popup(title='Message', content=content, size_hint=(0.5, 0.3))
         dismiss_button.bind(on_press=popup.dismiss)
         popup.open()
 
