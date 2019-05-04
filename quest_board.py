@@ -23,6 +23,7 @@ from kivy.lang import Builder
 
 import json, requests, datetime, time
 import pandas
+import os
 
 
 
@@ -31,7 +32,7 @@ import pandas
 
 import excel_parser as ep
 
-input_file_path = '/Users/zhonghenry/Desktop/cq_manager/cq_input.xlsx'
+input_file_path = '/Users/zhonghenry/Desktop/cq_manager/cq_excel.xlsx'
 
 df = ep.to_parse_excel(input_file_path)
 quest_list = ep.df_to_list(df)
@@ -67,9 +68,29 @@ class ShareData:
         self.current_user_quest_id = 0
         self.searching_user_quest_id = 0
         self.now = datetime.datetime.now()
-
+        self.new_spreadsheet_path = ''
 
 filter_status = {'drive_status': 0, 'knowledge_status':0, 'action_status': 0, 'strategy_status': 0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -179,123 +200,47 @@ def get_user_repeat_time(quest_id):
 
 
 
-
-
-
-
-
-
-class QuestScreen(Screen):
+class ImportScreen(Screen):
 
     def __int__(self, **kwargs):
-        super(QuestScreen, self).__init__(**kwargs)
-        now = datetime.datetime.now()
-        self.current_time = int(str(self.now.year) + str(self.now.month) + str(self.now.day) + str(self.now.hour) + str(self.now.minute) + str(self.now.second) + str(self.now.microsecond))
-        self.c_drive_status = 1
-        self.c_knowledge_status = 1
-        self.c_action_status = 1
-        self.c_strategy_status = 1
+        super(ImportScreen, self).__init__(**kwargs)
 
-    def to_details(self, instance):
-        quest_id = int(instance.text[0:3])
-        print('The instance has a quest id of #{}'.format(quest_id))
-        for entry in get_next_entry():
-            if int(entry['quest_id']) == quest_id:
-                user_quest_id = add_new_user_quest(self, entry)
-                # ShareData.current_user_quest_id = user_quest_id
-                # print('Proceed to the details for user_quest #{}'.format(ShareData.current_user_quest_id))
-                print('Proceed to the details for user_quest #{}'.format(user_quest_id))
-                break
+    # def open(self, path, filename):
+    #     with open(os.path.join(path, filename[0])) as f:
+    #         print ('The path is: {}'.format(f.read()))
+    #
+    # def select_file(self, filename):
+    #     print ('The path from selected() is {}'.format(filename[0]))
 
-    def set_drive(self):
-        if self.ids.filter_drive.state == 'down':
-            filter_status['drive_status'] = 1
-            print("Down: {}".format(filter_status))
-        else:
-            filter_status['drive_status'] = 0
-            print("Down: {}".format(filter_status))
-        self.on_enter()
+    def select_file(self, filename):
+        new_file_path = filename[0]
+        self.parent.transition.direction = 'left'
+        self.parent.current = 'quest_screen'
 
-    def set_knowledge(self):
-        if self.ids.filter_knowledge.state == 'down':
-            filter_status['knowledge_status'] = 1
-        else:
-            filter_status['knowledge_status'] = 0
-        self.on_enter()
-
-    def set_action(self):
-        if self.ids.filter_action.state == 'down':
-            filter_status['action_status'] = 1
-        else:
-            filter_status['action_status'] = 0
-        self.on_enter()
-
-    def set_strategy(self):
-        if self.ids.filter_strategy.state == 'down':
-            filter_status['strategy_status'] = 1
-        else:
-            filter_status['strategy_status'] = 0
-        self.on_enter()
-
-    def set_registered(self):
-        if self.ids.filter_registered.state == 'down':
-            self.on_enter(1)
-        else:
-            self.on_enter()
-
-    def show_in_details(self, instance):
-        shared_data = App.get_running_app().shared_data
-        this_user_quest_id = int(instance.text[-3:])
-        with open("user.data", "r") as user_file:
-            user_data = json.load(user_file)
-        for entry in user_data:
-            if entry['user_quest_id'] == this_user_quest_id:
-                entry['user_quest_id'] = shared_data.current_user_quest_id + 1
-                break
-        with open("user.data", "w") as user_file:
-            json.dump(user_data, user_file, indent = 4)
-            user_file.close()
-
-        shared_data.current_user_quest_id += 1
+        # shared_data = App.get_running_app().shared_data
+        # shared_data.new_spreadsheet_path = file_path
 
 
+        with open("quest.data", "r") as current_quest_file:
+            current_quest_data = json.load(current_quest_file)
+            current_quest_file.close()
 
-    @mainthread
-    def on_enter(self, mode = 0):
-        self.ids.entry_layout.clear_widgets()
-        if mode == 0:
-            for entry_str in entry_to_display(mode):
-            # for entry_str in entry_to_display():
-                a_button = Button(text = entry_str, halign='center')
-                a_button.bind(on_release = self.to_details)
-                self.ids.entry_layout.add_widget(a_button)
-        else:
-            for entry_str in entry_to_display(mode):
-            # for entry_str in entry_to_display():
-                a_button = Button(text = entry_str, halign='center')
-                a_button.bind(on_release = self.show_in_details)
-                self.ids.entry_layout.add_widget(a_button)
+        existed_quest_id = []
+        for check_quest in current_quest_data:
+            if 'quest_id' in check_quest.keys():
+                existed_quest_id.append(int(check_quest['quest_id']))
+        next_quest_id = max(existed_quest_id) + 1
 
+        df = ep.to_parse_excel(new_file_path)
+        new_quest_list = ep.df_to_list(df)
+        new_quest_list = ep.clean_quest_list(new_quest_list, next_quest_id)
 
+        current_quest_data.extend(new_quest_list)
+        with open("quest.data", "w") as quest_file:
+            json.dump(current_quest_data, quest_file, indent = 4)
+            quest_file.close()
 
-
-
-    def on_leave(self):
-        filter_status['drive_status'] = 0
-        filter_status['knowledge_status'] = 0
-        filter_status['action_status'] = 0
-        filter_status['strategy_status'] = 0
-
-
-
-
-
-
-
-
-
-
-
+        print ('The path from select_file() after completion is: {}'.format(new_file_path))
 
 
 
@@ -321,6 +266,16 @@ class ProfileScreen(Screen):
     def file_export(self):
         pandas.read_json("user.data").to_excel("output.xlsx")
         pass
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -421,6 +376,163 @@ class ProfileScreen(Screen):
         self.ids.progress_tr.text = '{}%\nLevel\nProgress'.format(percent)
         quest_file.close()
         user_file.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class QuestScreen(Screen):
+
+    def __int__(self, **kwargs):
+        super(QuestScreen, self).__init__(**kwargs)
+        now = datetime.datetime.now()
+        self.current_time = int(str(self.now.year) + str(self.now.month) + str(self.now.day) + str(self.now.hour) + str(self.now.minute) + str(self.now.second) + str(self.now.microsecond))
+        self.c_drive_status = 1
+        self.c_knowledge_status = 1
+        self.c_action_status = 1
+        self.c_strategy_status = 1
+
+    def to_details(self, instance):
+        quest_id = int(instance.text[0:3])
+        print('The instance has a quest id of #{}'.format(quest_id))
+        for entry in get_next_entry():
+            if int(entry['quest_id']) == quest_id:
+                user_quest_id = add_new_user_quest(self, entry)
+                # ShareData.current_user_quest_id = user_quest_id
+                # print('Proceed to the details for user_quest #{}'.format(ShareData.current_user_quest_id))
+                print('Proceed to the details for user_quest #{}'.format(user_quest_id))
+                break
+        self.parent.transition.direction = 'left'
+        self.parent.current = 'details_screen'
+
+    def set_drive(self):
+        if self.ids.filter_drive.state == 'down':
+            filter_status['drive_status'] = 1
+            print("Down: {}".format(filter_status))
+        else:
+            filter_status['drive_status'] = 0
+            print("Down: {}".format(filter_status))
+        self.on_enter()
+
+    def set_knowledge(self):
+        if self.ids.filter_knowledge.state == 'down':
+            filter_status['knowledge_status'] = 1
+        else:
+            filter_status['knowledge_status'] = 0
+        self.on_enter()
+
+    def set_action(self):
+        if self.ids.filter_action.state == 'down':
+            filter_status['action_status'] = 1
+        else:
+            filter_status['action_status'] = 0
+        self.on_enter()
+
+    def set_strategy(self):
+        if self.ids.filter_strategy.state == 'down':
+            filter_status['strategy_status'] = 1
+        else:
+            filter_status['strategy_status'] = 0
+        self.on_enter()
+
+    def set_registered(self):
+        if self.ids.filter_registered.state == 'down':
+            self.on_enter(1)
+        else:
+            self.on_enter()
+
+    def show_in_details(self, instance):
+        shared_data = App.get_running_app().shared_data
+        this_user_quest_id = int(instance.text[-3:])
+        with open("user.data", "r") as user_file:
+            user_data = json.load(user_file)
+        for entry in user_data:
+            if entry['user_quest_id'] == this_user_quest_id:
+                entry['user_quest_id'] = shared_data.current_user_quest_id + 1
+                break
+        with open("user.data", "w") as user_file:
+            json.dump(user_data, user_file, indent = 4)
+            user_file.close()
+
+        shared_data.current_user_quest_id += 1
+        self.parent.transition.direction = 'left'
+        self.parent.current = 'details_screen'
+
+
+
+    @mainthread
+    def on_enter(self, mode = 0):
+        self.ids.entry_layout.clear_widgets()
+        if mode == 0:
+            for entry_str in entry_to_display(mode):
+            # for entry_str in entry_to_display():
+                a_button = Button(text = entry_str, halign='center')
+                a_button.bind(on_release = self.to_details)
+                self.ids.entry_layout.add_widget(a_button)
+        else:
+            for entry_str in entry_to_display(mode):
+            # for entry_str in entry_to_display():
+                a_button = Button(text = entry_str, halign='center')
+                a_button.bind(on_release = self.show_in_details)
+                self.ids.entry_layout.add_widget(a_button)
+
+
+
+
+
+    def on_leave(self):
+        filter_status['drive_status'] = 0
+        filter_status['knowledge_status'] = 0
+        filter_status['action_status'] = 0
+        filter_status['strategy_status'] = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
